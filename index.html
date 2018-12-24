@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#00897B"/>
+  <title>Pray for Indonesia</title>
+  <meta name="description" content="Bencana demi bencana yang terjadi di negeri ini silih berganti. Belum hilang duka kita akan bencana gempa Lombok yang terjadi secara berturut-turut pada 29 Juli, 5 Agustus, dan 19 Agustus 2018 berupa gempa besar. Sedangkan gempa susulan tak terhitung jumlahnya, sehingga membuat masyarakat Lombok sangat trauma. Tiba-tiba muncul gempa Palu di Sulawesi Tengah, disertai tsunami pada 28 September 2018 lalu sekarang terjadi Tsunami di Selat Sunda pada 22 Desember 2018."/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigasi -->
+  <nav class="teal lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+      <a href="#home" class="brand-logo" id="logo-container">Pray ID</a>
+      <a href="#" class="sidenav-trigger" data-target="nav-mobile">☰</a>
+      
+      <ul class="topnav right hide-on-med-and-down"></ul>
+      <ul class="sidenav" id="nav-mobile"></ul>
+    </div>
+  </nav>
+  <!-- Akhir Navigasi -->
+  <div class="container" id="body-content"></div>
+  <script src="js/materialize.min.js"></script>
+  <script src="js/nav.js"></script>
+  <script>
+    // REGISTER SERVICE WORKER
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function() {
+        navigator.serviceWorker
+            .register("/service-worker.js")
+            .then(function() {
+            console.log("Pendaftaran ServiceWorker berhasil");
+            })
+            .catch(function() {
+            console.log("Pendaftaran ServiceWorker gagal");
+            });
+        });
+    } else {
+        console.log("ServiceWorker belum didukung browser ini.");
+    }
+    </script>
+</body>
+</html>
